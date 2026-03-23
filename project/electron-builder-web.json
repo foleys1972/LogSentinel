@@ -1,0 +1,31 @@
+{
+  "extends": null,
+  "appId": "com.logsentinel.enterprise.web",
+  "productName": "LogSentinel Enterprise Web",
+  "extraMetadata": {
+    "main": "electron-main-web.cjs"
+  },
+  "directories": {
+    "output": "dist-web-exe"
+  },
+  "files": [
+    "dist/**/*",
+    "electron-main-web.cjs",
+    "server.cjs",
+    "server-monitoring.cjs",
+    "server-ml.cjs",
+    "server-predictive.cjs",
+    "llm-enrichment.cjs",
+    "snmp-trap-sender.cjs",
+    "preload-ws-log.cjs",
+    "watchdog.cjs"
+  ],
+  "extraResources": [],
+  "win": {
+    "target": ["nsis", "portable"]
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "extends": null,
+  "directories": {
+    "app": "watchdog-app",
+    "output": "dist-watchdog-ui"
+  },
+  "appId": "com.logsentinel.watchdog",
+  "productName": "LogSentinel Watchdog",
+  "files": [
+    "main.cjs",
+    "preload.cjs",
+    "index.html",
+    "watchdog-core.cjs"
+  ],
+  "win": {
+    "target": ["portable"],
+    "signAndEditExecutable": false
+  },
+  "portable": {
+    "artifactName": "LogSentinel-Watchdog-${version}.exe"
+  }
+}

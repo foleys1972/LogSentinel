@@ -1,0 +1,358 @@
+import { useState, useEffect, useCallback } from 'react';
+import { Site, LogEntry, MLAnomaly, SystemMetrics } from '../types';
+import { 
+  generateSystemMetrics 
+} from '../utils/dataGeneration';
+import { MLAnomalyDetector } from '../utils/mlAlgorithms';
+import { enrichLogData } from '../utils/dataEnrichment';
+import { HealthCalculator } from '../utils/healthCalculation';
+import { fileSystemMonitor } from '../utils/fileSystemMonitor';
+
+export function useRealTimeData() {
+  const [sites, setSites] = useState<Site[]>([]);
+  const [logs, setLogs] = useState<LogEntry[]>([]);
+  const [anomalies, setAnomalies] = useState<MLAnomaly[]>([]);
+  const [metrics, setMetrics] = useState<SystemMetrics | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [mlDetector] = useState(() => new MLAnomalyDetector());
+  const [totalLogsProcessed, setTotalLogsProcessed] = useState(0);
+
+  // Load sites from localStorage only
+  const loadSites = useCallback(() => {
+    const savedSites = localStorage.getItem('managedSites');
+    if (savedSites) {
+      try {
+        const parsedSites = JSON.parse(savedSites);
+        return parsedSites.map((site: any) => ({
+          ...site,
+          lastUpdate: new Date(site.lastUpdate),
+          healthHistory: site.healthHistory?.map((h: any) => ({
+            ...h,
+            timestamp: new Date(h.timestamp)
+          })) || [],
+          acknowledgedAlerts: site.acknowledgedAlerts || [],
+          lastAcknowledgment: site.lastAcknowledgment ? new Date(site.lastAcknowledgment) : null
+        }));
+      } catch (error) {
+        console.error('Error parsing saved sites:', error);
+      }
+    }
+    
+    return [];
+  }, []);
+
+  // Save sites to localStorage
+  const saveSites = useCallback((sitesToSave: Site[]) => {
+    localStorage.setItem('managedSites', JSON.stringify(sitesToSave));
+  }, []);
+
+  // Handle real log entries from file system monitoring (NOW ENABLED)
+  const handleRealLogEntry = useCallback((logEntry: LogEntry) => {
+    console.log('Processing real log entry:', logEntry.message);
+    
+    // Enrich the log data
+    const enrichedLog = enrichLogData(logEntry);
+    
+    // Add to logs array (keep last 1000 logs)
+    setLogs(prevLogs => {
+      const newLogs = [enrichedLog, ...prevLogs].slice(0, 1000);
+      return newLogs;
+    });
+
+    // Update total logs processed count
+    setTotalLogsProcessed(prev => prev + 1);
+
+    // Run ML anomaly detection
+    try {
+      const newAnomalies = mlDetector.detectAnomalies([enrichedLog]);
+      if (newAnomalies.length > 0) {
+        setAnomalies(prevAnomalies => {
+          const updatedAnomalies = [...newAnomalies, ...prevAnomalies].slice(0, 500);
+          return updatedAnomalies;
+        });
+        console.log(`Detected ${newAnomalies.length} anomalies from log entry`);
+      }
+    } catch (error) {
+      console.error('Error in ML anomaly detection:', error);
+    }
+
+    // Update site health based on log level
+    if (['critical', 'high'].includes(enrichedLog.level)) {
+      setSites(prevSites => {
+        return prevSites.map(site => {
+          if (site.id === enrichedLog.siteId) {
+            const healthImpact = enrichedLog.level === 'critical' ? 20 : 10;
+            const newHealthScore = Math.max(0, site.healthScore - healthImpact);
+            const newStatus = newHealthScore < 30 ? 'red' : newHealthScore < 70 ? 'amber' : 'green';
+            
+            // Update alert counts
+            const newAlertCounts = { ...site.alertCounts };
+            newAlertCounts[enrichedLog.level as keyof typeof newAlertCounts]++;
+            
+            const updatedSite = {
+              ...site,
+              healthScore: newHealthScore,
+              status: newStatus as 'green' | 'amber' | 'red',
+              alertCounts: newAlertCounts,
+              lastUpdate: new Date()
+            };
+            
+            return updatedSite;
+          }
+          return site;
+        });
+      });
+    }
+  }, [mlDetector]);
+
+  // Initialize data
+  useEffect(() => {
+    const initializeData = async () => {
+      const loadedSites = loadSites();
+      
+      // Start monitoring for sites with valid configuration
+      const monitoredSites = loadedSites.filter(site => 
+        site.monitoringConfig?.folderPath && 
+        site.monitoringConfig.folderPath.trim() !== '' &&
+        !site.monitoringConfig.folderPath.includes('example') &&
+        !site.monitoringConfig.folderPath.includes('demo')
+      );
+
+      console.log(`Starting monitoring for ${monitoredSites.length} sites with valid configuration`);
+
+      // Register sites with monitor and start real monitoring
+      for (const site of monitoredSites) {
+        try {
+          await fileSystemMonitor.startMonitoring(site, handleRealLogEntry);
+          console.log(`Started real monitoring for ${site.name}`);
+        } catch (error) {
+          console.error(`Failed to start monitoring for site ${site.name}:`, error);
+        }
+      }
+
+      const initialMetrics = generateSystemMetrics(loadedSites, 0);
+
+      setSites(loadedSites);
+      setLogs([]); // Start with empty logs - will be populated by real monitoring
+      setAnomalies([]);
+      setTotalLogsProcessed(0);
+      setMetrics({
+        ...initialMetrics,
+        activeSites: loadedSites.filter(s => s.status !== 'red').length
+      });
+      setIsLoading(false);
+    };
+
+    initializeData();
+  }, [loadSites, handleRealLogEntry]);
+
+  // Update site health scores periodically based on real logs
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSites(prevSites => {
+        const updatedSites = prevSites.map(site => {
+          const isMonitored = site.monitoringConfig?.folderPath && 
+                             site.monitoringConfig.folderPath.trim() !== '' &&
+                             !site.monitoringConfig.folderPath.includes('example') &&
+                             !site.monitoringConfig.folderPath.includes('demo');
+          
+          // For monitored sites, health is managed by real log processing
+          // For non-monitored sites, maintain current status
+          return {
+            ...site,
+            lastUpdate: new Date()
+          };
+        });
+        
+        saveSites(updatedSites);
+        return updatedSites;
+      });
+
+      // Update system metrics
+      setMetrics(prevMetrics => {
+        const newTotalLogs = totalLogsProcessed;
+        return generateSystemMetrics(sites, newTotalLogs);
+      });
+
+    }, 30000); // Update every 30 seconds
+
+    return () => clearInterval(interval);
+  }, [sites, logs, totalLogsProcessed, saveSites]);
+
+  const refreshData = useCallback(() => {
+    setIsLoading(true);
+    setTimeout(() => {
+      const currentSites = loadSites();
+      const newMetrics = generateSystemMetrics(currentSites, totalLogsProcessed);
+
+      setSites(currentSites);
+      setMetrics({
+        ...newMetrics,
+        activeSites: currentSites.filter(s => s.status !== 'red').length
+      });
+      setIsLoading(false);
+    }, 1000);
+  }, [loadSites, totalLogsProcessed]);
+
+  const updateSites = useCallback(async (newSites: Site[]) => {
+    // Stop monitoring for removed sites
+    const removedSites = sites.filter(oldSite => 
+      !newSites.find(newSite => newSite.id === oldSite.id)
+    );
+    
+    for (const removedSite of removedSites) {
+      fileSystemMonitor.stopMonitoring(removedSite.id);
+      console.log(`Stopped monitoring for removed site: ${removedSite.name}`);
+    }
+
+    // Start monitoring for new sites
+    const addedSites = newSites.filter(newSite => 
+      !sites.find(oldSite => oldSite.id === newSite.id) &&
+      newSite.monitoringConfig?.folderPath &&
+      newSite.monitoringConfig.folderPath.trim() !== '' &&
+      !newSite.monitoringConfig.folderPath.includes('example') &&
+      !newSite.monitoringConfig.folderPath.includes('demo')
+    );
+
+    for (const addedSite of addedSites) {
+      try {
+        await fileSystemMonitor.startMonitoring(addedSite, handleRealLogEntry);
+        console.log(`Started real monitoring for new site: ${addedSite.name}`);
+      } catch (error) {
+        console.error(`Failed to start monitoring for site ${addedSite.name}:`, error);
+      }
+    }
+
+    // Check for sites with updated monitoring configuration
+    const updatedSites = newSites.filter(newSite => {
+      const oldSite = sites.find(oldSite => oldSite.id === newSite.id);
+      return oldSite && 
+             oldSite.monitoringConfig?.folderPath !== newSite.monitoringConfig?.folderPath;
+    });
+
+    for (const updatedSite of updatedSites) {
+      // Stop old monitoring
+      fileSystemMonitor.stopMonitoring(updatedSite.id);
+      
+      // Start new monitoring if path is valid
+      if (updatedSite.monitoringConfig?.folderPath &&
+          updatedSite.monitoringConfig.folderPath.trim() !== '' &&
+          !updatedSite.monitoringConfig.folderPath.includes('example') &&
+          !updatedSite.monitoringConfig.folderPath.includes('demo')) {
+        try {
+          await fileSystemMonitor.startMonitoring(updatedSite, handleRealLogEntry);
+          console.log(`Updated real monitoring for site: ${updatedSite.name}`);
+        } catch (error) {
+          console.error(`Failed to update monitoring for site ${updatedSite.name}:`, error);
+        }
+      }
+    }
+
+    setSites(newSites);
+    saveSites(newSites);
+    
+    setMetrics(prevMetrics => {
+      const currentTotalLogs = prevMetrics?.totalLogs || 0;
+      return generateSystemMetrics(newSites, currentTotalLogs);
+    });
+
+    const monitoredSites = newSites.filter(site => 
+      site.monitoringConfig?.folderPath && 
+      site.monitoringConfig.folderPath.trim() !== '' &&
+      !site.monitoringConfig.folderPath.includes('example') &&
+      !site.monitoringConfig.folderPath.includes('demo')
+    );
+    
+    console.log(`Now monitoring ${monitoredSites.length} sites with real file monitoring`);
+    
+  }, [sites, saveSites, handleRealLogEntry]);
+
+  const acknowledgeLog = useCallback((logId: string, acknowledgedBy: string) => {
+    setLogs(prevLogs => 
+      prevLogs.map(log => 
+        log.id === logId 
+          ? { 
+              ...log, 
+              acknowledged: true, 
+              acknowledgedBy, 
+              acknowledgedAt: new Date() 
+            }
+          : log
+      )
+    );
+  }, []);
+
+  const acknowledgeAnomaly = useCallback((anomalyId: string, acknowledgedBy: string) => {
+    setAnomalies(prevAnomalies => 
+      prevAnomalies.map(anomaly => 
+        anomaly.id === anomalyId 
+          ? { 
+              ...anomaly, 
+              acknowledged: true, 
+              acknowledgedBy, 
+              acknowledgedAt: new Date() 
+            }
+          : anomaly
+      )
+    );
+  }, []);
+
+  const acknowledgeAllForSite = useCallback((siteId: string, acknowledgedBy: string) => {
+    const now = new Date();
+    
+    setLogs(prevLogs => 
+      prevLogs.map(log => 
+        log.siteId === siteId && !log.acknowledged && ['critical', 'high'].includes(log.level)
+          ? { 
+              ...log, 
+              acknowledged: true, 
+              acknowledgedBy, 
+              acknowledgedAt: now 
+            }
+          : log
+      )
+    );
+
+    setAnomalies(prevAnomalies => 
+      prevAnomalies.map(anomaly => 
+        anomaly.siteId === siteId && !anomaly.acknowledged && ['critical', 'high'].includes(anomaly.severity)
+          ? { 
+              ...anomaly, 
+              acknowledged: true, 
+              acknowledgedBy, 
+              acknowledgedAt: now 
+            }
+          : anomaly
+      )
+    );
+
+    setSites(prevSites => {
+      const updatedSites = prevSites.map(site => {
+        if (site.id === siteId) {
+          const canReset = HealthCalculator.canResetToGreen(site, logs);
+          return {
+            ...site,
+            lastAcknowledgment: now,
+            status: canReset ? 'green' : site.status
+          };
+        }
+        return site;
+      });
+      saveSites(updatedSites);
+      return updatedSites;
+    });
+  }, [logs, saveSites]);
+
+  return {
+    sites,
+    logs,
+    anomalies,
+    metrics,
+    isLoading,
+    refreshData,
+    updateSites,
+    acknowledgeLog,
+    acknowledgeAnomaly,
+    acknowledgeAllForSite
+  };
+}

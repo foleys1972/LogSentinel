@@ -1,0 +1,17 @@
+directories:
+  output: dist-electron
+  buildResources: build
+appId: com.logsentinel.enterprise
+productName: LogSentinel Enterprise
+files:
+  - filter:
+      - dist/**/*
+      - electron-main.cjs
+win:
+  target:
+    - nsis
+    - portable
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+electronVersion: 28.3.3

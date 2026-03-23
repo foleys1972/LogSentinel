@@ -1,0 +1,29 @@
+directories:
+  output: dist-web-exe
+  buildResources: build
+extends: null
+appId: com.logsentinel.enterprise.web
+productName: LogSentinel Enterprise Web
+extraMetadata:
+  main: electron-main-web.cjs
+files:
+  - filter:
+      - dist/**/*
+      - electron-main-web.cjs
+      - server.cjs
+      - server-monitoring.cjs
+      - server-ml.cjs
+      - server-predictive.cjs
+      - llm-enrichment.cjs
+      - snmp-trap-sender.cjs
+      - preload-ws-log.cjs
+      - watchdog.cjs
+extraResources: []
+win:
+  target:
+    - nsis
+    - portable
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+electronVersion: 28.3.3

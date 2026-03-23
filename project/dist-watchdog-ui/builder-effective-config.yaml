@@ -1,0 +1,20 @@
+directories:
+  output: dist-watchdog-ui
+  buildResources: build
+  app: watchdog-app
+extends: null
+appId: com.logsentinel.watchdog
+productName: LogSentinel Watchdog
+files:
+  - filter:
+      - main.cjs
+      - preload.cjs
+      - index.html
+      - watchdog-core.cjs
+win:
+  target:
+    - portable
+  signAndEditExecutable: false
+portable:
+  artifactName: LogSentinel-Watchdog-${version}.exe
+electronVersion: 28.3.3
