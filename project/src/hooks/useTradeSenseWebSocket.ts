@@ -96,7 +96,55 @@ const STORAGE_KEY = 'tradeSenseWebSocketConfig';
 const DEFAULT_WS_URL = 'wss://TradeSenseFQDN/api';
 
 function generateCommandRef(): string {
-  return `cmd_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`;
+  return String(Date.now() * 1000 + Math.floor(Math.random() * 1000));
+}
+
+function coerceBatchNum(value: unknown): number | null {
+  if (value === null || value === undefined || value === '') return null;
+  if (typeof value === 'number' && Number.isFinite(value)) return Math.trunc(value);
+  if (typeof value === 'string') {
+    const n = Number.parseInt(value, 10);
+    return Number.isFinite(n) ? n : null;
+  }
+  return null;
+}
+
+function batchMetaFromMessage(message: Record<string, unknown>): { current: number | null; last: number | null } {
+  const payload = message.data && typeof message.data === 'object' && !Array.isArray(message.data)
+    ? (message.data as Record<string, unknown>)
+    : {};
+
+  const curInner = coerceBatchNum(payload.current_batch);
+  const curEnv = coerceBatchNum(message.current_batch);
+  const lastInner = coerceBatchNum(payload.last_batch);
+  const lastEnv = coerceBatchNum(message.last_batch);
+
+  const current = curInner !== null ? curInner : curEnv;
+  const last = lastInner !== null && lastEnv !== null
+    ? Math.max(lastInner, lastEnv)
+    : (lastInner !== null ? lastInner : lastEnv);
+
+  return { current, last };
+}
+
+function mergeBatchPayload(acc: unknown, incoming: unknown): unknown {
+  if (!incoming || typeof incoming !== 'object') return acc;
+  if (!acc || typeof acc !== 'object') return incoming;
+  if (Array.isArray(incoming)) return incoming;
+
+  const a = acc as Record<string, unknown>;
+  const b = incoming as Record<string, unknown>;
+  const out: Record<string, unknown> = { ...a };
+
+  for (const [k, v] of Object.entries(b)) {
+    const prev = out[k];
+    if (Array.isArray(prev) && Array.isArray(v)) {
+      out[k] = [...prev, ...v];
+    } else {
+      out[k] = v;
+    }
+  }
+  return out;
 }
 
 export interface UseTradeSenseWebSocketOptions {
@@ -127,6 +175,7 @@ export function useTradeSenseWebSocket(wsUrl?: string | null, token?: string | n
   const autoReconnectRef = useRef(options?.autoReconnect ?? true);
   autoReconnectRef.current = options?.autoReconnect ?? true;
   const pendingCommandsRef = useRef<Map<string, (data: unknown) => void>>(new Map());
+  const pendingBatchesRef = useRef<Map<string, { last: number | null; mergedData: unknown }>>(new Map());
   const authCommandRef = useRef<string | null>(null);
   const urlRef = useRef(wsUrl ?? loadSavedConfig().url);
   const tokenRef = useRef(token ?? loadSavedConfig().token);
@@ -169,11 +218,13 @@ export function useTradeSenseWebSocket(wsUrl?: string | null, token?: string | n
           args: args ?? {}
         });
         pendingCommandsRef.current.set(commandRef, (data) => resolve(data as T));
+        pendingBatchesRef.current.delete(commandRef);
         wsRef.current.send(msg);
         // Timeout after 30s
         setTimeout(() => {
           if (pendingCommandsRef.current.has(commandRef)) {
             pendingCommandsRef.current.delete(commandRef);
+            pendingBatchesRef.current.delete(commandRef);
             reject(new Error(`Command ${command} timed out`));
           }
         }, 30000);
@@ -256,6 +307,7 @@ export function useTradeSenseWebSocket(wsUrl?: string | null, token?: string | n
       wsRef.current = null;
     }
     pendingCommandsRef.current.clear();
+    pendingBatchesRef.current.clear();
     setState((prev) => ({
       ...prev,
       isConnected: false,
@@ -324,11 +376,11 @@ export function useTradeSenseWebSocket(wsUrl?: string | null, token?: string | n
           const rawData = event.data as string;
           onMessageRef.current?.(rawData);
           try {
-            const msg = JSON.parse(rawData);
+            const msg = JSON.parse(rawData) as Record<string, unknown>;
             const cmd = msg.command;
 
-            if (cmd === 'response') {
-              const commandRef = msg.command_ref;
+            if (cmd === 'response' || cmd === 'return') {
+              const commandRef = String(msg.command_ref ?? '');
               const isAuthResponse = commandRef === authCommandRef.current;
               if (isAuthResponse) {
                 authCommandRef.current = null;
@@ -343,8 +395,33 @@ export function useTradeSenseWebSocket(wsUrl?: string | null, token?: string | n
               } else {
                 const handler = pendingCommandsRef.current.get(commandRef);
                 if (handler) {
-                  pendingCommandsRef.current.delete(commandRef);
-                  handler(msg.success ? msg.data : null);
+                  if (msg.success === false) {
+                    pendingCommandsRef.current.delete(commandRef);
+                    pendingBatchesRef.current.delete(commandRef);
+                    handler(null);
+                  } else {
+                    const data = msg.data;
+                    const { current, last } = batchMetaFromMessage(msg);
+                    const isBatched = current !== null || last !== null;
+                    if (isBatched) {
+                      const existing = pendingBatchesRef.current.get(commandRef) || { last: null, mergedData: null };
+                      const mergedData = mergeBatchPayload(existing.mergedData, data);
+                      const lastFinal = existing.last !== null && last !== null ? Math.max(existing.last, last) : (existing.last ?? last);
+                      pendingBatchesRef.current.set(commandRef, { last: lastFinal, mergedData });
+
+                      const currentFinal = current ?? 1;
+                      const resolvedLast = lastFinal ?? currentFinal;
+                      if (currentFinal >= resolvedLast) {
+                        pendingCommandsRef.current.delete(commandRef);
+                        pendingBatchesRef.current.delete(commandRef);
+                        handler(mergedData);
+                      }
+                    } else {
+                      pendingCommandsRef.current.delete(commandRef);
+                      pendingBatchesRef.current.delete(commandRef);
+                      handler(data);
+                    }
+                  }
                 }
                 if (msg.success === false && msg.error) {
                   setState((prev) => ({

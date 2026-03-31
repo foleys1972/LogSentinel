@@ -6184,3 +6184,2121 @@ Remote access: http://<this-machine-ip>:3000
 
   Multiple users can browse to the URLs above.
 [2026-03-20T16:17:48.168Z] Server stopped by user
+[2026-03-30T15:01:35.369Z] LogSentinel server started
+[2026-03-30T15:01:38.918Z] 
+[2026-03-30T15:01:44.513Z] LogSentinel server running at http://localhost:3000
+[2026-03-30T15:01:44.514Z] Remote access: http://<this-machine-ip>:3000
+
+========================================
+  LogSentinel Enterprise - Web Server
+========================================
+[2026-03-30T15:01:44.523Z] Local:   http://localhost:3000
+[2026-03-30T15:01:44.602Z] Network: http://192.168.1.41:3000
+[2026-03-30T15:01:44.666Z] Multiple users can browse to the URLs above.
+[2026-03-30T15:02:05.517Z] [Web] Stopped all file watchers
+[2026-03-30T15:02:05.865Z] [Web] Started monitoring c:\logs\bt for Home
+[2026-03-30T15:02:05.866Z] [Web] Started monitoring c:\windows for Home
+[2026-03-30T15:02:10.362Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:02:10.793Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:03:58.191Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:03:58.426Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:12.333Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:12.520Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:12.728Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:13.009Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:13.591Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:13.772Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:31.731Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:31.909Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:34.736Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:34.979Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:36.239Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:37.347Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:37.560Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:38.598Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:38.728Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:38.913Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:39.347Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:40.252Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:40.499Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:40.610Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:40.821Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:41.230Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:41.513Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:41.833Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:42.212Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:43.848Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:44.088Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:44.361Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:44.785Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:45.134Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:45.343Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:45.657Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:46.108Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:46.517Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:46.682Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:46.884Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:47.286Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:49.193Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:49.834Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:50.322Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:50.552Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:50.933Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:51.157Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:51.617Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:52.082Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:52.199Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\appcompat\Backup'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\appcompat\\Backup',
+  filename: 'c:\\windows\\appcompat\\Backup'
+}
+[2026-03-30T15:04:52.213Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\appcompat\Programs'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\appcompat\\Programs',
+  filename: 'c:\\windows\\appcompat\\Programs'
+}
+[2026-03-30T15:04:52.545Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:52.781Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:53.058Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:53.277Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:53.575Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:53.870Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:54.405Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:55.280Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:55.533Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:55.899Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:56.247Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:56.539Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:56.813Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:57.322Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:04:58.367Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:00.459Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:00.807Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:01.124Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:03.668Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:04.512Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:05.439Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:06.183Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:06.725Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:07.151Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:07.483Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:07.730Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:08.074Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:08.949Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:14.374Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:18.953Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:19.865Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:21.923Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:23.402Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:24.357Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:25.049Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:26.273Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:27.329Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:27.646Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:05:29.621Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:06:20.857Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:07:24.224Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:12.591Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:23.695Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:23.939Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:25.744Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:26.024Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:26.469Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:26.641Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:27.681Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:28.553Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:29.000Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:29.256Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:29.915Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:31.446Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:32.638Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:33.694Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:34.005Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:34.307Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:34.707Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:36.711Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:37.659Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:38.908Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:40.524Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:42.462Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:43.501Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:44.469Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:44.913Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:45.111Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:46.241Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\System32\Tasks'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\System32\\Tasks',
+  filename: 'c:\\windows\\System32\\Tasks'
+}
+[2026-03-30T15:08:48.033Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:50.717Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\appcompat\Backup'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\appcompat\\Backup',
+  filename: 'c:\\windows\\appcompat\\Backup'
+}
+[2026-03-30T15:08:50.719Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\appcompat\Programs'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\appcompat\\Programs',
+  filename: 'c:\\windows\\appcompat\\Programs'
+}
+[2026-03-30T15:08:50.872Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:52.157Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:52.656Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:52.986Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:53.700Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:54.119Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:54.407Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:54.793Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:57.740Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:58.163Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:08:58.446Z] [stderr] Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitted, watch 'c:\windows\Temp'
+    at FSWatcher.<computed> (node:internal/fs/watchers:247:19)
+    at Object.watch (node:fs:2418:34)
+    at createFsWatchInstance (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:119:15)
+    at setFsWatchListener (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:166:15)
+    at NodeFsHandler._watchWithNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:331:14)
+    at NodeFsHandler._handleDir (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:567:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NodeFsHandler._addToNodeFs (C:\Projects\LogSentinel\Web\resources\app.asar\node_modules\chokidar\lib\nodefs-handler.js:617:16) {
+  errno: -4048,
+  syscall: 'watch',
+  code: 'EPERM',
+  path: 'c:\\windows\\Temp',
+  filename: 'c:\\windows\\Temp'
+}
+[2026-03-30T15:09:07.597Z] [stderr] <--- Last few GCs --->
+
+[14720:00002DF400144000]   444554 ms: Mark-Compact 1990.1 (2067.8) -> 1984.8 (2070.0) MB, 2441.53 / 0.00 ms  (average mu = 0.773, current mu = 0.093) allocation failure; scavenge might not succeed
+[14720:00002DF400144000]   448186 ms: Mark-Compact 1992.6 (2070.0) -> 1987.4 (2072.8) MB, 3497.30 / 0.00 ms  (average mu = 0.549, current mu = 0.037) allocation failure; scavenge might not succeed
+
+
+<--- JS stacktrace --->
+[2026-03-30T15:09:07.814Z] [stderr] FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory
+[2026-03-30T15:09:17.332Z] [stderr] 1: 00007FF74EE0F1B6 node::SetTracingController+86134
+ 2: 00007FF74EE0F429 node::OnFatalError+585
+ 3: 00007FF751FE9D73 v8::Function::NewInstance+835
+ 4: 00007FF751FE9D03 v8::Function::NewInstance+723
+ 5: 00007FF7520AC347 v8::CppHeap::wrapper_descriptor+66791
+ 6: 00007FF75090F27A v8::internal::ThreadIsolation::StartOfJitAllocationAt+443338
+ 7: 00007FF75090AA37 v8::internal::ThreadIsolation::StartOfJitAllocationAt+424839
+ 8: 00007FF7508FD855 v8::internal::ThreadIsolation::StartOfJitAllocationAt+371109
+ 9: 00007FF750AE5D13 v8::internal::StrongRootAllocatorBase::deallocate_impl+1910451
+10: 00007FF750EB39FA cppgc::internal::WriteBarrier::DijkstraMarkingBarrierRangeSlow+3110506
+11: 00007FF750E1AB0A cppgc::internal::WriteBarrier::DijkstraMarkingBarrierRangeSlow+2484090
+12: 00007FF7B0F32582
+[2026-03-30T15:09:32.100Z] Process exited. Restarting in 5s...
+[2026-03-30T15:09:39.460Z] LogSentinel server started
+[2026-03-30T15:09:43.632Z] 
+[2026-03-30T15:09:45.331Z] LogSentinel server running at http://localhost:3000
+[2026-03-30T15:09:45.333Z] Remote access: http://<this-machine-ip>:3000
+
+========================================
+  LogSentinel Enterprise - Web Server
+========================================
+
+  Local:   http://localhost:3000
+[2026-03-30T15:09:45.340Z] Network: http://192.168.1.41:3000
+[2026-03-30T15:09:45.341Z] Multiple users can browse to the URLs above.
+[2026-03-30T17:22:07.143Z] Server stopped by user
