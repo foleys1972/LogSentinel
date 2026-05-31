@@ -39,7 +39,9 @@ import {
   Monitor,
   Zap,
   Radio,
-  Target
+  Target,
+  LayoutGrid,
+  X
 } from 'lucide-react';
 
 function App() {
@@ -76,6 +78,23 @@ function App() {
   const [showTradeSense, setShowTradeSense] = useState(false);
   const [showServiceImprovement, setShowServiceImprovement] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showQuickTools, setShowQuickTools] = useState(false);
+
+  const quickTools = [
+    { title: 'Advanced Regex Search', icon: Search, color: 'bg-green-600 hover:bg-green-700', onClick: () => setShowRegexSearch(true) },
+    { title: 'Intelligent Log Parser', icon: FileText, color: 'bg-green-600 hover:bg-green-700', onClick: () => setShowLogParser(true) },
+    { title: '3D Network Topology', icon: Network, color: 'bg-purple-600 hover:bg-purple-700', onClick: () => setShowNetworkTopology(true) },
+    { title: 'Behavioral Learning', icon: Users, color: 'bg-purple-600 hover:bg-purple-700', onClick: () => setShowBehaviorLearning(true) },
+    { title: 'Predictive Analytics & AI Insights', icon: Brain, color: 'bg-purple-600 hover:bg-purple-700', onClick: () => setShowPredictiveAnalytics(true) },
+    { title: 'Monitoring Tool Integration', icon: Activity, color: 'bg-blue-600 hover:bg-blue-700', onClick: () => setShowMonitoringIntegration(true) },
+    { title: 'Reports & Analytics', icon: BarChart3, color: 'bg-blue-600 hover:bg-blue-700', onClick: () => setShowReports(true) },
+    { title: 'BT Systems WebSocket (passive)', icon: Zap, color: 'bg-cyan-600 hover:bg-cyan-700', onClick: () => setShowBTSystems(true) },
+    { title: 'TradeSense WBA API', icon: Radio, color: 'bg-teal-600 hover:bg-teal-700', onClick: () => setShowTradeSense(true) },
+    { title: 'Smart Alerting & Escalation', icon: Bell, color: 'bg-orange-600 hover:bg-orange-700', onClick: () => setShowSmartAlerting(true) },
+    { title: 'Predictive Maintenance', icon: Wrench, color: 'bg-orange-600 hover:bg-orange-700', onClick: () => setShowPredictiveMaintenance(true) },
+    { title: 'NOC Wall Display', icon: Monitor, color: 'bg-slate-600 hover:bg-slate-700', onClick: () => setShowNOCDisplay(true) },
+    { title: 'Service Improvement', icon: Target, color: 'bg-amber-600 hover:bg-amber-700', onClick: () => setShowServiceImprovement(true) },
+  ];
 
   const handleSiteSelect = (siteId: string | null) => {
     setSelectedSite(siteId);
@@ -126,122 +145,37 @@ function App() {
       />
       
       <Header onRefresh={refreshData} isLoading={isLoading} isRefreshing={isRefreshing} user={user} onLogout={logout} onChangePassword={changePassword} onShowLogin={() => setShowLoginModal(true)} />
-      
-      {/* Enhanced Action Buttons - Two Columns */}
-      <div className="fixed top-6 right-6 flex flex-col space-y-3 z-30">
-        {/* First Column */}
-        <div className="flex flex-col space-y-3">
+
+      {/* Quick tools — bottom-right, above Settings gear; avoids header Sign in overlap */}
+      {!showLoginModal && (
+        <div className="fixed bottom-28 right-6 z-30 flex flex-col items-end gap-2">
+          {showQuickTools && (
+            <div className="grid grid-cols-2 gap-2 max-h-[min(50vh,28rem)] overflow-y-auto rounded-xl border border-slate-700 bg-slate-900/95 p-2 shadow-xl backdrop-blur-sm">
+              {quickTools.map(({ title, icon: Icon, color, onClick }) => (
+                <button
+                  key={title}
+                  onClick={() => {
+                    onClick();
+                    setShowQuickTools(false);
+                  }}
+                  className={`${color} text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110`}
+                  title={title}
+                >
+                  <Icon className="h-5 w-5" />
+                </button>
+              ))}
+            </div>
+          )}
           <button
-            onClick={() => setShowRegexSearch(true)}
-            className="bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-            title="Advanced Regex Search"
+            onClick={() => setShowQuickTools((open) => !open)}
+            className="bg-slate-700 hover:bg-slate-600 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+            title={showQuickTools ? 'Close tools' : 'Quick tools'}
+            aria-expanded={showQuickTools}
           >
-            <Search className="h-5 w-5" />
-          </button>
-          
-          <button
-            onClick={() => setShowNetworkTopology(true)}
-            className="bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-            title="3D Network Topology"
-          >
-            <Network className="h-5 w-5" />
-          </button>
-          
-          <button
-            onClick={() => setShowMonitoringIntegration(true)}
-            className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-            title="Monitoring Tool Integration"
-          >
-            <Activity className="h-5 w-5" />
-          </button>
-          
-          <button
-            onClick={() => setShowBTSystems(true)}
-            className="bg-cyan-600 hover:bg-cyan-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-            title="BT Systems WebSocket (passive)"
-          >
-            <Zap className="h-5 w-5" />
-          </button>
-          
-          <button
-            onClick={() => setShowTradeSense(true)}
-            className="bg-teal-600 hover:bg-teal-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-            title="TradeSense WBA API (get_zones, get_tpos, health, subscribe)"
-          >
-            <Radio className="h-5 w-5" />
-          </button>
-          
-          <button
-            onClick={() => setShowPredictiveMaintenance(true)}
-            className="bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-            title="Predictive Maintenance"
-          >
-            <Wrench className="h-5 w-5" />
+            {showQuickTools ? <X className="h-5 w-5" /> : <LayoutGrid className="h-5 w-5" />}
           </button>
         </div>
-      </div>
-
-      {/* Second Column */}
-      <div className="fixed top-6 right-20 flex flex-col space-y-3 z-30">
-        <button
-          onClick={() => setShowLogParser(true)}
-          className="bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-          title="Intelligent Log Parser"
-        >
-          <FileText className="h-5 w-5" />
-        </button>
-        
-        <button
-          onClick={() => setShowBehaviorLearning(true)}
-          className="bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-          title="Behavioral Learning"
-        >
-          <Users className="h-5 w-5" />
-        </button>
-        
-        <button
-          onClick={() => setShowNOCDisplay(true)}
-          className="bg-slate-600 hover:bg-slate-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-          title="NOC Wall Display"
-        >
-          <Monitor className="h-5 w-5" />
-        </button>
-        
-        <button
-          onClick={() => setShowPredictiveAnalytics(true)}
-          className="bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-          title="Predictive Analytics & AI Insights"
-        >
-          <Brain className="h-5 w-5" />
-        </button>
-      </div>
-
-      {/* Third Column */}
-      <div className="fixed top-6 right-34 flex flex-col space-y-3 z-30">
-        <button
-          onClick={() => setShowSmartAlerting(true)}
-          className="bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-          title="Smart Alerting & Escalation"
-        >
-          <Bell className="h-5 w-5" />
-        </button>
-        
-        <button
-          onClick={() => setShowReports(true)}
-          className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-          title="Reports & Analytics"
-        >
-          <BarChart3 className="h-5 w-5" />
-        </button>
-        
-        <button
-          onClick={() => setShowServiceImprovement(true)}
-          className="bg-amber-600 hover:bg-amber-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
-          title="Service Improvement - Trends, concerns, critical fixes"
-        >
-          <Target className="h-5 w-5" />
-        </button>
-      </div>
+      )}
       
       <main className="p-6">
         {/* System Metrics */}

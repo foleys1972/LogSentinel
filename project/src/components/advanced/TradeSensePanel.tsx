@@ -14,6 +14,7 @@ import {
   Zap,
   FileText
 } from 'lucide-react';
+import toast from 'react-hot-toast';
 import { selectLogFile, appendToLogFile, type WsLogWriter } from '../../utils/wsLogToFile';
 import { Site } from '../../types';
 import { useTradeSenseWebSocket } from '../../hooks/useTradeSenseWebSocket';
@@ -63,6 +64,7 @@ function TradeSenseSiteCard({ site, options, onAutoReconnectChange, onMessage }:
     healthReport,
     notifications,
     lastError,
+    sessionNotice,
     connect,
     disconnect,
     getZones,
@@ -75,7 +77,10 @@ function TradeSenseSiteCard({ site, options, onAutoReconnectChange, onMessage }:
   } = useTradeSenseWebSocket(url || null, token || null, {
     skipAutoConnect: true,
     autoReconnect: options.autoReconnect,
-    onMessage
+    onMessage,
+    onSessionExpired: () => {
+      toast.error(`${site.name}: TradeSense session expired — click Connect again`);
+    }
   });
 
   useEffect(() => {
@@ -178,6 +183,11 @@ function TradeSenseSiteCard({ site, options, onAutoReconnectChange, onMessage }:
             </p>
           ) : (
             <>
+              {sessionNotice && (
+                <div className="text-amber-400 text-sm flex items-center gap-1 bg-amber-500/10 border border-amber-500/20 rounded px-3 py-2">
+                  {sessionNotice}
+                </div>
+              )}
               {lastError && (
                 <div className="text-red-400 text-sm flex items-center gap-1">
                   {lastError}

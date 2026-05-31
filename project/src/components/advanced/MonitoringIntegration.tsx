@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Activity, Database, BarChart3, Gauge, Settings, X, CheckCircle, AlertCircle, Clock } from 'lucide-react';
+import { Activity, Database, BarChart3, Gauge, Settings, X, CheckCircle, AlertCircle } from 'lucide-react';
+import toast from 'react-hot-toast';
 import { Site } from '../../types';
+import { testMonitoringConnection } from '../../utils/monitoringConnectionTest';
 
 interface MonitoringIntegrationProps {
   sites: Site[];
@@ -151,43 +153,62 @@ export function MonitoringIntegration({ sites, isOpen, onClose }: MonitoringInte
   };
 
   const testConnection = async (integration: IntegrationConfig) => {
+    if (!integration.endpoint?.trim()) {
+      toast.error('Set an endpoint URL before testing');
+      return;
+    }
+
     setTestResults(prev => ({ ...prev, [integration.id]: { testing: true } }));
-    
-    // Simulate connection test
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    const success = Math.random() > 0.3; // 70% success rate for demo
+
+    const probe = await testMonitoringConnection({
+      type: integration.type,
+      endpoint: integration.endpoint,
+      credentials: integration.credentials
+    });
+
     const result = {
       testing: false,
-      success,
-      message: success ? 'Connection successful' : 'Connection failed: Timeout',
+      success: probe.success,
+      message: probe.latencyMs != null
+        ? `${probe.message} (${probe.latencyMs}ms)`
+        : probe.message,
       timestamp: new Date()
     };
-    
+
     setTestResults(prev => ({ ...prev, [integration.id]: result }));
-    
-    if (success) {
-      const updatedIntegrations = integrations.map(int => 
-        int.id === integration.id 
+
+    if (probe.success) {
+      toast.success(`${integration.name}: connected`);
+      const updatedIntegrations = integrations.map(int =>
+        int.id === integration.id
           ? { ...int, status: 'connected' as const, lastSync: new Date() }
           : int
+      );
+      saveIntegrations(updatedIntegrations);
+    } else {
+      toast.error(probe.message);
+      const updatedIntegrations = integrations.map(int =>
+        int.id === integration.id ? { ...int, status: 'error' as const } : int
       );
       saveIntegrations(updatedIntegrations);
     }
   };
 
   const toggleIntegration = (integrationId: string) => {
-    const updatedIntegrations = integrations.map(int => 
-      int.id === integrationId 
-        ? { 
-            ...int, 
+    const updatedIntegrations = integrations.map(int =>
+      int.id === integrationId
+        ? {
+            ...int,
             enabled: !int.enabled,
-            status: !int.enabled ? 'connected' : 'disconnected',
-            lastSync: !int.enabled ? new Date() : undefined
+            status: !int.enabled ? 'configuring' : 'disconnected',
+            lastSync: undefined
           }
         : int
     );
     saveIntegrations(updatedIntegrations);
+    if (updatedIntegrations.find(i => i.id === integrationId)?.enabled) {
+      toast('Run Test to verify the connection', { icon: 'ℹ️' });
+    }
   };
 
   const updateIntegration = (updatedIntegration: IntegrationConfig) => {

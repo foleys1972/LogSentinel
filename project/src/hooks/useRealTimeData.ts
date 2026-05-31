@@ -8,7 +8,7 @@ import { MLAnomalyDetector } from '../utils/mlAlgorithms';
 import { enrichLogData } from '../utils/dataEnrichment';
 import { forwardTrap } from '../utils/snmpTrapForwarder';
 import { HealthCalculator } from '../utils/healthCalculation';
-import { fileSystemMonitor } from '../utils/fileSystemMonitor';
+import { fetchBackendHealth, backendUnavailableMessage } from '../utils/serverApi';
 
 export function useRealTimeData() {
   const [sites, setSites] = useState<Site[]>([]);
@@ -99,48 +99,71 @@ export function useRealTimeData() {
       }
     }
 
-    // Browser: connect to WebSocket for monitoring logs
+    // Browser: connect to WebSocket for monitoring logs (backend must be on port 3000)
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
     const wsUrl = `${protocol}//${window.location.host}/ws-monitoring`;
+    let active = true;
     let ws: WebSocket | null = null;
+    let warnedOffline = false;
 
     const sendConfig = () => {
-      if (!ws || ws.readyState !== WebSocket.OPEN) return;
+      if (!active || !ws || ws.readyState !== WebSocket.OPEN) return;
       const sites = loadSites();
       ws.send(JSON.stringify({ type: 'monitoring-config', sites }));
     };
 
-    try {
-      ws = new WebSocket(wsUrl);
-      ws.onmessage = (event) => {
-        try {
-          const msg = JSON.parse(event.data);
-          if (msg.type === 'new-log-entry' && msg.data) {
-            handleRealLogEntry(msg.data as LogEntry);
-          } else if (msg.type === 'new-anomaly' && msg.data) {
-            setAnomalies((prev) => {
-              const a = { ...msg.data, timestamp: new Date(msg.data.timestamp) };
-              return [a, ...prev].slice(0, 50);
-            });
-          } else if (msg.type === 'predictions' && msg.data) {
-            setServerPredictions(msg.data as ServerPredictionsPayload);
-          } else if (msg.type === 'llm-evaluation-result' && msg.data) {
-            setLlmEvaluationResult(msg.data);
-          }
-        } catch {
-          /* ignore */
+    const connectMonitoring = async () => {
+      const backendUp = await fetchBackendHealth();
+      if (!active) return;
+      if (!backendUp) {
+        if (import.meta.env.DEV && !warnedOffline) {
+          warnedOffline = true;
+          console.info(backendUnavailableMessage());
         }
-      };
-      ws.onopen = sendConfig;
-    } catch (e) {
-      console.warn('WebSocket monitoring connection failed:', e);
-    }
+        return;
+      }
+
+      try {
+        ws = new WebSocket(wsUrl);
+        ws.onmessage = (event) => {
+          try {
+            const msg = JSON.parse(event.data);
+            if (msg.type === 'new-log-entry' && msg.data) {
+              handleRealLogEntry(msg.data as LogEntry);
+            } else if (msg.type === 'new-anomaly' && msg.data) {
+              setAnomalies((prev) => {
+                const a = { ...msg.data, timestamp: new Date(msg.data.timestamp) };
+                return [a, ...prev].slice(0, 50);
+              });
+            } else if (msg.type === 'predictions' && msg.data) {
+              setServerPredictions(msg.data as ServerPredictionsPayload);
+            } else if (msg.type === 'llm-evaluation-result' && msg.data) {
+              setLlmEvaluationResult(msg.data);
+            }
+          } catch {
+            /* ignore */
+          }
+        };
+        ws.onopen = () => {
+          if (!active) return;
+          sendConfig();
+        };
+      } catch (e) {
+        console.warn('WebSocket monitoring connection failed:', e);
+      }
+    };
+
+    connectMonitoring();
 
     const onConfigUpdate = () => sendConfig();
     window.addEventListener('monitoring-config-update', onConfigUpdate);
     return () => {
+      active = false;
       window.removeEventListener('monitoring-config-update', onConfigUpdate);
-      ws?.close();
+      if (ws?.readyState === WebSocket.OPEN) {
+        ws.close();
+      }
+      ws = null;
     };
   }, [handleRealLogEntry, loadSites]);
 

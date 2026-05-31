@@ -24,7 +24,8 @@ import { SNMPTrapConfig } from './admin/SNMPTrapConfig';
 import { LLMConfig } from './admin/LLMConfig';
 import { UserManager } from './admin/UserManager';
 import { AuthConfig } from './admin/AuthConfig';
-import { BookOpen, FolderOpen, Radio, Sparkles, Users, Shield } from 'lucide-react';
+import { MCPConfig } from './admin/MCPConfig';
+import { BookOpen, FolderOpen, Radio, Sparkles, Users, Shield, Plug } from 'lucide-react';
 
 interface AdminPanelProps {
   sites: Site[];
@@ -34,7 +35,9 @@ interface AdminPanelProps {
 
 export function AdminPanel({ sites, onSitesUpdate, onDataUpdate }: AdminPanelProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<'sites' | 'errors' | 'alarmcodes' | 'errorcodeimports' | 'assets' | 'criticality' | 'snmp' | 'llm'>('sites');
+  const [activeTab, setActiveTab] = useState<
+    'sites' | 'errors' | 'alarmcodes' | 'errorcodeimports' | 'assets' | 'criticality' | 'snmp' | 'llm' | 'users' | 'auth' | 'mcp'
+  >('sites');
 
   const tabs = [
     { id: 'sites' as const, label: 'Sites', icon: MapPin, color: 'text-blue-400' },
@@ -45,6 +48,7 @@ export function AdminPanel({ sites, onSitesUpdate, onDataUpdate }: AdminPanelPro
     { id: 'criticality' as const, label: 'Criticality Rules', icon: Database, color: 'text-purple-400' },
     { id: 'snmp' as const, label: 'SNMP Traps', icon: Radio, color: 'text-orange-400' },
     { id: 'llm' as const, label: 'AI / LLM', icon: Sparkles, color: 'text-amber-400' },
+    { id: 'mcp' as const, label: 'MCP Integration', icon: Plug, color: 'text-violet-400' },
     { id: 'users' as const, label: 'Users', icon: Users, color: 'text-blue-400' },
     { id: 'auth' as const, label: 'Access & Acknowledgment', icon: Shield, color: 'text-green-400' }
   ];
@@ -62,9 +66,9 @@ export function AdminPanel({ sites, onSitesUpdate, onDataUpdate }: AdminPanelPro
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-slate-800 border border-slate-700 rounded-xl max-w-6xl w-full max-h-[90vh] overflow-hidden">
+      <div className="bg-slate-800 border border-slate-700 rounded-xl max-w-6xl w-full max-h-[90vh] overflow-hidden flex flex-col">
         {/* Header */}
-        <div className="p-6 border-b border-slate-700">
+        <div className="p-6 border-b border-slate-700 flex-shrink-0">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="p-2 bg-blue-500/20 rounded-lg">
@@ -84,14 +88,14 @@ export function AdminPanel({ sites, onSitesUpdate, onDataUpdate }: AdminPanelPro
           </div>
         </div>
 
-        {/* Tabs */}
-        <div className="border-b border-slate-700">
-          <div className="flex space-x-0">
+        {/* Tabs — horizontal scroll when many tabs */}
+        <div className="border-b border-slate-700 flex-shrink-0 overflow-x-auto">
+          <div className="flex min-w-max">
             {tabs.map(tab => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center space-x-2 px-6 py-4 border-b-2 transition-colors ${
+                className={`flex items-center space-x-2 px-6 py-4 border-b-2 transition-colors whitespace-nowrap flex-shrink-0 ${
                   activeTab === tab.id
                     ? 'border-blue-400 bg-slate-750 text-white'
                     : 'border-transparent text-slate-400 hover:text-white hover:bg-slate-750'
@@ -105,7 +109,7 @@ export function AdminPanel({ sites, onSitesUpdate, onDataUpdate }: AdminPanelPro
         </div>
 
         {/* Content */}
-        <div className="overflow-y-auto max-h-[calc(90vh-200px)]">
+        <div className="flex-1 min-h-0 overflow-y-auto">
           {activeTab === 'sites' && (
             <SiteManager sites={sites} onSitesUpdate={onSitesUpdate} />
           )}
@@ -129,6 +133,9 @@ export function AdminPanel({ sites, onSitesUpdate, onDataUpdate }: AdminPanelPro
           )}
           {activeTab === 'llm' && (
             <LLMConfig onDataUpdate={onDataUpdate} />
+          )}
+          {activeTab === 'mcp' && (
+            <MCPConfig onDataUpdate={onDataUpdate} />
           )}
           {activeTab === 'users' && (
             <UserManager onDataUpdate={onDataUpdate} />

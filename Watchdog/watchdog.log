@@ -8302,3 +8302,20 @@ Watcher error for site_1773509234049_verint: Error: EPERM: operation not permitt
 [2026-03-30T15:09:45.340Z] Network: http://192.168.1.41:3000
 [2026-03-30T15:09:45.341Z] Multiple users can browse to the URLs above.
 [2026-03-30T17:22:07.143Z] Server stopped by user
+[2026-03-31T12:56:56.810Z] LogSentinel server started
+[2026-03-31T12:56:58.975Z] 
+[2026-03-31T12:57:00.416Z] LogSentinel server running at http://localhost:3000
+[2026-03-31T12:57:00.417Z] Remote access: http://<this-machine-ip>:3000
+
+========================================
+  LogSentinel Enterprise - Web Server
+========================================
+
+  Local:   http://localhost:3000
+[2026-03-31T12:57:01.026Z] Network: http://192.168.1.41:3000
+
+  Multiple users can browse to the URLs above.
+[2026-03-31T12:57:29.790Z] [Web] Stopped all file watchers
+[2026-03-31T12:57:30.020Z] [Web] Started monitoring C:\logs for Home
+[2026-03-31T12:57:30.143Z] [Web] Started monitoring C:\Projects\intercom\logs for Home
+[2026-03-31T17:57:18.768Z] Server stopped by user

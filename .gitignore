@@ -1,0 +1,33 @@
+# Dependencies
+**/node_modules/
+
+# Build outputs (keep packaged Web/Watchdog if you intentionally ship binaries)
+project/dist/
+project/dist-*/
+project/node_modules/
+
+# Secrets and local server data — never commit
+**/.env
+**/.env.*
+project/.llm-config.json
+project/data/mcp-config.json
+project/data/users.json
+project/data/auth-config.json
+project/.ml-baselines.json
+
+# Logs and runtime
+*.log
+**/watchdog.pid
+**/watchdog.log
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

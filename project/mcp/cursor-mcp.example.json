@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "logsentinel": {
+      "command": "node",
+      "args": ["C:/Projects/LogSentinel/project/mcp/logsentinel-mcp-server.cjs"],
+      "env": {
+        "LOGSENTINEL_URL": "http://localhost:3000",
+        "LOGSENTINEL_MCP_API_KEY": "change-me-to-a-long-random-secret"
+      }
+    }
+  }
+}

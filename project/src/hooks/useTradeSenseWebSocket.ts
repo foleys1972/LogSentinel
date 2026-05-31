@@ -5,6 +5,7 @@
  * Commands: auth, get_zones, get_tpos, get_health_api_report, subscribe, unsubscribe
  * Response: { command: "response", command_ref, success, data }
  * Notify:   { command: "notify", data: { category, events } }
+ * Server:   { command: "server notification", command_ref, message } — re-auth / session expiry
  */
 
 import { useState, useEffect, useCallback, useRef } from 'react';
@@ -89,6 +90,8 @@ export interface TradeSenseState {
   healthReport: TradeSenseHealthReport | null;
   notifications: Array<{ category: string; events: TradeSenseNotifyEvent[]; receivedAt: Date }>;
   lastError: string | null;
+  /** Non-error session status (e.g. re-authenticating after server notification) */
+  sessionNotice: string | null;
   reconnectAttempts: number;
 }
 
@@ -97,6 +100,21 @@ const DEFAULT_WS_URL = 'wss://TradeSenseFQDN/api';
 
 function generateCommandRef(): string {
   return String(Date.now() * 1000 + Math.floor(Math.random() * 1000));
+}
+
+function wsErrorMessage(error: unknown): string {
+  if (!error || typeof error !== 'object') return 'Request failed';
+  const e = error as Record<string, unknown>;
+  return String(e.message || e.reason || e.code || 'Request failed');
+}
+
+function isAuthExpiryNotification(commandRef: string): boolean {
+  const ref = commandRef.toLowerCase();
+  return ref.includes('authentication expir');
+}
+
+function isSessionExpiredNotification(commandRef: string): boolean {
+  return commandRef.toLowerCase().includes('session expired');
 }
 
 function coerceBatchNum(value: unknown): number | null {
@@ -153,11 +171,15 @@ export interface UseTradeSenseWebSocketOptions {
   skipAutoConnect?: boolean;
   /** When false, do not auto-reconnect on connection close (default: true) */
   autoReconnect?: boolean;
+  /** Fired when server sends Session expired notification (after gracetime) */
+  onSessionExpired?: () => void;
 }
 
 export function useTradeSenseWebSocket(wsUrl?: string | null, token?: string | null, options?: UseTradeSenseWebSocketOptions) {
   const onMessageRef = useRef(options?.onMessage);
   onMessageRef.current = options?.onMessage;
+  const onSessionExpiredRef = useRef(options?.onSessionExpired);
+  onSessionExpiredRef.current = options?.onSessionExpired;
   const [state, setState] = useState<TradeSenseState>({
     isConnected: false,
     isAuthenticated: false,
@@ -166,6 +188,7 @@ export function useTradeSenseWebSocket(wsUrl?: string | null, token?: string | n
     healthReport: null,
     notifications: [],
     lastError: null,
+    sessionNotice: null,
     reconnectAttempts: 0
   });
 
@@ -177,8 +200,29 @@ export function useTradeSenseWebSocket(wsUrl?: string | null, token?: string | n
   const pendingCommandsRef = useRef<Map<string, (data: unknown) => void>>(new Map());
   const pendingBatchesRef = useRef<Map<string, { last: number | null; mergedData: unknown }>>(new Map());
   const authCommandRef = useRef<string | null>(null);
+  const reauthInFlightRef = useRef(false);
   const urlRef = useRef(wsUrl ?? loadSavedConfig().url);
   const tokenRef = useRef(token ?? loadSavedConfig().token);
+
+  const sendAuthOnSocket = useCallback((ws: WebSocket, tok: string, isReauth: boolean) => {
+    const authRef = generateCommandRef();
+    authCommandRef.current = authRef;
+    if (isReauth) {
+      reauthInFlightRef.current = true;
+      setState((prev) => ({
+        ...prev,
+        sessionNotice: 'Refreshing TradeSense session…',
+        lastError: null
+      }));
+    }
+    ws.send(
+      JSON.stringify({
+        command: 'auth',
+        command_ref: authRef,
+        args: { token: tok }
+      })
+    );
+  }, []);
 
   const maxReconnectAttempts = 10;
   const reconnectInterval = 3000;
@@ -308,10 +352,12 @@ export function useTradeSenseWebSocket(wsUrl?: string | null, token?: string | n
     }
     pendingCommandsRef.current.clear();
     pendingBatchesRef.current.clear();
+    reauthInFlightRef.current = false;
     setState((prev) => ({
       ...prev,
       isConnected: false,
       isAuthenticated: false,
+      sessionNotice: null,
       lastError: 'Disconnected'
     }));
   }, []);
@@ -345,7 +391,7 @@ export function useTradeSenseWebSocket(wsUrl?: string | null, token?: string | n
       urlRef.current = effectiveUrl;
       tokenRef.current = effectiveToken;
       saveConfig(effectiveUrl, effectiveToken);
-      setState((prev) => ({ ...prev, lastError: null }));
+      setState((prev) => ({ ...prev, lastError: null, sessionNotice: null }));
 
       try {
         const ws = new WebSocket(effectiveUrl);
@@ -353,23 +399,16 @@ export function useTradeSenseWebSocket(wsUrl?: string | null, token?: string | n
 
         ws.onopen = () => {
           reconnectAttemptsRef.current = 0;
+          reauthInFlightRef.current = false;
           setState((prev) => ({
             ...prev,
             isConnected: true,
             lastError: null,
+            sessionNotice: null,
             reconnectAttempts: 0
           }));
 
-          // Auth immediately per API doc (mandatory)
-          const authRef = generateCommandRef();
-          authCommandRef.current = authRef;
-          ws.send(
-            JSON.stringify({
-              command: 'auth',
-              command_ref: authRef,
-              args: { token: effectiveToken }
-            })
-          );
+          sendAuthOnSocket(ws, effectiveToken, false);
         };
 
         ws.onmessage = (event) => {
@@ -379,17 +418,62 @@ export function useTradeSenseWebSocket(wsUrl?: string | null, token?: string | n
             const msg = JSON.parse(rawData) as Record<string, unknown>;
             const cmd = msg.command;
 
+            if (cmd === 'server notification') {
+              const notificationRef = String(msg.command_ref ?? '');
+              const notificationMessage = String(msg.message ?? '');
+
+              if (isAuthExpiryNotification(notificationRef)) {
+                const openWs = wsRef.current;
+                const tok = tokenRef.current;
+                if (
+                  openWs?.readyState === WebSocket.OPEN &&
+                  tok &&
+                  !reauthInFlightRef.current
+                ) {
+                  sendAuthOnSocket(openWs, tok, true);
+                }
+                return;
+              }
+
+              if (isSessionExpiredNotification(notificationRef)) {
+                reauthInFlightRef.current = false;
+                authCommandRef.current = null;
+                setState((prev) => ({
+                  ...prev,
+                  isAuthenticated: false,
+                  sessionNotice: null,
+                  lastError: notificationMessage || 'Session expired'
+                }));
+                onSessionExpiredRef.current?.();
+                return;
+              }
+
+              setState((prev) => ({
+                ...prev,
+                sessionNotice: notificationMessage || notificationRef || 'Server notification'
+              }));
+              return;
+            }
+
             if (cmd === 'response' || cmd === 'return') {
               const commandRef = String(msg.command_ref ?? '');
               const isAuthResponse = commandRef === authCommandRef.current;
               if (isAuthResponse) {
                 authCommandRef.current = null;
+                reauthInFlightRef.current = false;
                 if (msg.success) {
-                  setState((prev) => ({ ...prev, isAuthenticated: true, lastError: null }));
+                  setState((prev) => ({
+                    ...prev,
+                    isAuthenticated: true,
+                    lastError: null,
+                    sessionNotice: null
+                  }));
                 } else {
                   setState((prev) => ({
                     ...prev,
-                    lastError: msg.error?.message || msg.error?.reason || 'Auth failed'
+                    isAuthenticated: false,
+                    sessionNotice: null,
+                    lastError: wsErrorMessage(msg.error) || 'Auth failed'
                   }));
                 }
               } else {
@@ -426,7 +510,7 @@ export function useTradeSenseWebSocket(wsUrl?: string | null, token?: string | n
                 if (msg.success === false && msg.error) {
                   setState((prev) => ({
                     ...prev,
-                    lastError: msg.error?.message || msg.error?.reason || msg.error?.code || 'Request failed'
+                    lastError: wsErrorMessage(msg.error)
                   }));
                 }
               }
@@ -458,7 +542,15 @@ export function useTradeSenseWebSocket(wsUrl?: string | null, token?: string | n
         ws.onclose = () => {
           wsRef.current = null;
           pendingCommandsRef.current.clear();
-          setState((prev) => ({ ...prev, isConnected: false, isAuthenticated: false }));
+          pendingBatchesRef.current.clear();
+          reauthInFlightRef.current = false;
+          authCommandRef.current = null;
+          setState((prev) => ({
+            ...prev,
+            isConnected: false,
+            isAuthenticated: false,
+            sessionNotice: null
+          }));
 
           if (!autoReconnectRef.current) return;
           if (reconnectAttemptsRef.current < maxReconnectAttempts) {
@@ -482,7 +574,7 @@ export function useTradeSenseWebSocket(wsUrl?: string | null, token?: string | n
         }));
       }
     },
-    []
+    [sendAuthOnSocket]
   );
 
   useEffect(() => {

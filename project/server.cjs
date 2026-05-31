@@ -42,6 +42,10 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || '0.0.0.0';
 
+app.get('/api/health', (_req, res) => {
+  res.json({ ok: true });
+});
+
 function getDistPath() {
   if (process.env.ELECTRON_DIST_PATH) {
     return process.env.ELECTRON_DIST_PATH;
@@ -153,7 +157,11 @@ if (authModule) {
   });
 
   app.use((req, res, next) => {
-    if (req.path.startsWith('/api/') && !req.path.startsWith('/api/auth/')) {
+    if (
+      req.path.startsWith('/api/') &&
+      !req.path.startsWith('/api/auth/') &&
+      !req.path.startsWith('/api/mcp/')
+    ) {
       return requireAuth(req, res, next);
     }
     next();
@@ -300,6 +308,91 @@ app.post('/api/snmp-trap', (req, res) => {
       res.status(500).json({ error: err.message });
     });
 });
+
+// ----- MCP API (LLM / agent integration) -----
+let mcpConfigModule;
+try {
+  mcpConfigModule = require('./mcp-config.cjs');
+} catch (e) {
+  mcpConfigModule = null;
+}
+
+try {
+  const { registerMcpRoutes } = require('./server-mcp-api.cjs');
+  registerMcpRoutes(app, { mlModule, llmModule, predictiveModule });
+} catch (e) {
+  console.warn('MCP API module not loaded:', e.message);
+}
+
+if (mcpConfigModule) {
+  app.get('/api/mcp-config', (req, res) => {
+    try {
+      res.json(mcpConfigModule.getConfigSafe(req));
+    } catch (e) {
+      res.status(500).json({ error: e.message });
+    }
+  });
+
+  app.get('/api/mcp-config/cursor-snippet', (req, res) => {
+    try {
+      res.json(mcpConfigModule.buildCursorMcpSnippet(req));
+    } catch (e) {
+      res.status(500).json({ error: e.message });
+    }
+  });
+
+  app.post('/api/mcp-config', (req, res) => {
+    const { enabled, apiKey, publicUrl, regenerateKey } = req.body || {};
+    try {
+      const current = mcpConfigModule.loadConfig();
+      const next = {
+        enabled: enabled !== undefined ? !!enabled : current.enabled,
+        apiKey: current.apiKey,
+        publicUrl: publicUrl !== undefined ? String(publicUrl).trim() : current.publicUrl
+      };
+      if (regenerateKey) {
+        next.apiKey = mcpConfigModule.generateApiKey();
+      } else if (apiKey !== undefined && apiKey !== '') {
+        next.apiKey = String(apiKey).trim();
+      }
+      if (next.enabled && !next.apiKey && !mcpConfigModule.getEnvApiKey?.()) {
+        next.apiKey = mcpConfigModule.generateApiKey();
+      }
+      mcpConfigModule.saveConfig(next);
+      const safe = mcpConfigModule.getConfigSafe(req);
+      res.json({
+        ...safe,
+        apiKey: regenerateKey || (apiKey && apiKey !== '') ? next.apiKey : undefined
+      });
+    } catch (e) {
+      res.status(500).json({ error: e.message });
+    }
+  });
+
+  app.post('/api/mcp-config/test', async (req, res) => {
+    const testKey = String(req.body?.apiKey || '').trim() || mcpConfigModule.getEffectiveApiKey();
+    if (!testKey) {
+      return res.status(400).json({ success: false, error: 'No API key to test. Save or generate a key first.' });
+    }
+    const base = mcpConfigModule.getPublicUrl(req);
+    try {
+      const r = await fetch(`${base}/api/mcp/status`, {
+        headers: { Authorization: `Bearer ${testKey}` }
+      });
+      const data = await r.json().catch(() => ({}));
+      if (!r.ok) {
+        return res.json({ success: false, error: data.error || `HTTP ${r.status}` });
+      }
+      res.json({ success: true, data });
+    } catch (e) {
+      res.json({ success: false, error: e.message });
+    }
+  });
+}
+
+if (mcpConfigModule?.isMcpApiEnabled?.() && process.env.ELECTRON_RUN_AS_SUBPROCESS !== '1') {
+  console.log('  MCP API: enabled at /api/mcp/*');
+}
 
 // Static files and SPA fallback (must be after API routes)
 app.use(express.static(distPath));

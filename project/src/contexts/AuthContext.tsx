@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { getOfflineAuthConfig, isBackendProxyError, backendUnavailableMessage } from '../utils/serverApi';
 
 export interface User {
   id: string;
@@ -32,13 +33,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchAuthConfig = useCallback(async () => {
-    const fallback = { authRequired: false, requireAcknowledgment: true, acknowledgmentSeverities: ['critical', 'high'] as string[] };
+    const fallback = getOfflineAuthConfig();
     try {
       const res = await fetch('/api/auth/config', { credentials: 'include' });
       if (res.ok) {
         const data = await res.json();
         setAuthConfig(data);
         return data;
+      }
+      if (isBackendProxyError(res.status)) {
+        setAuthConfig(fallback);
+        return fallback;
       }
     } catch {
       /* Server not available (e.g. Electron standalone) - treat as no auth */
@@ -83,12 +88,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         credentials: 'include',
         body: JSON.stringify({ username, password })
       });
-      const data = await res.json();
+      if (isBackendProxyError(res.status)) {
+        return { success: false, error: backendUnavailableMessage() };
+      }
+      const data = await res.json().catch(() => ({}));
       if (!res.ok) return { success: false, error: data.error || 'Login failed' };
       setUser(data.user);
       return { success: true };
-    } catch (e) {
-      return { success: false, error: 'Network error' };
+    } catch {
+      return { success: false, error: backendUnavailableMessage() };
     }
   }, []);
 

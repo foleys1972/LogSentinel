@@ -267,6 +267,7 @@ export function useBTSystemsWebSocket(wsUrl?: string | null, options?: UseBTSyst
   }, []);
 
   useEffect(() => {
+    const skipAutoConnect = options?.skipAutoConnect ?? false;
     if (skipAutoConnect) {
       return () => disconnect();
     }
@@ -275,7 +276,7 @@ export function useBTSystemsWebSocket(wsUrl?: string | null, options?: UseBTSyst
       connect(url);
     }
     return () => disconnect();
-  }, [wsUrl, connect, disconnect, skipAutoConnect]);
+  }, [wsUrl, connect, disconnect, options?.skipAutoConnect]);
 
   const clearReports = useCallback(() => {
     setState(prev => ({

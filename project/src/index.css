@@ -55,3 +55,32 @@
   color: #f8fafc !important;
   background: rgba(51, 65, 85, 0.5) !important;
 }
+
+/* Scrollbars for settings/admin panels */
+.overflow-x-auto,
+.overflow-y-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #475569 #1e293b;
+}
+
+.overflow-x-auto::-webkit-scrollbar,
+.overflow-y-auto::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track,
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb,
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover,
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}

@@ -16,7 +16,7 @@ export function Header({ onRefresh, isLoading, isRefreshing, user, onLogout, onC
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showChangePassword, setShowChangePassword] = useState(false);
   return (
-    <header className="bg-slate-900 border-b border-slate-700 shadow-lg">
+    <header className="relative z-50 bg-slate-900 border-b border-slate-700 shadow-lg">
       <div className="px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
